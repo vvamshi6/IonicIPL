@@ -1,0 +1,30 @@
+<ion-view view-title= 'TeamPlayerInfo'>
+  <ion-content>
+  <center>
+      <div class = "row responsive-sm" ng-repeat="x in data">
+        <div class = "col">
+          <ion-list>
+          <ion-item>
+            <img id = {{x.player_img_url}} src='{{x.player_img_url}}' alt="PlayerImage" height="120" width="140" name = {{getImage(x.player_img_url)}}></img>
+          </ion-item>
+        </ion-list>
+        </div>
+        <div class = "col">
+            <ion-list>
+              <a href="{{x.player_cricinfo_url}}" target = '_blank'>
+                  <ion-item><b>Player Name</b> {{x.player_name}}</ion-item></a>
+                  <ion-item><b>Player Role</b> {{x.player_role}}</ion-item>
+                  <ion-item><b>Player Dob</b> {{x.player_dob}}</ion-item>
+                  <ion-item><b>Player Nationality</b> {{x.player_nationality}}</ion-item>
+                  <ion-item><b>Player Bat Style</b> {{x.player_batting_style}}</ion-item>
+                  <ion-item><b>Player Bow Style</b> {{x.player_bowling_style}}</ion-item>
+            </ion-list>
+        </div>
+
+      </div>
+      <br>
+    </tbody>
+</table>
+</center>
+</ion-content>
+</ion-view>

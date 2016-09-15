@@ -1,0 +1,40 @@
+<ion-view view-title="TeamsInfo">
+  <ion-content>
+    <ion-list>
+      <div ng-repeat = "x in data" ng-init = 'getImage(x.team_img_url)' class = 'row responsive-sm' class='card'>
+        <!-- <div class = 'col'> -->
+        <div class = 'row responsive-sm'>
+          <div class='col responsive-sm'>
+            </li>
+            <li class = 'item'>
+              <!-- <img class = 'thumbnail' id = {{x.team_img_url}} src='{{images[x.team_img_url]}}' height="75" width="120"/> -->
+              <img class = 'thumbnail' src='{{images[x.team_img_url]}}' height="75" width="105"/>
+              <!-- <img ng-src= 'imageCache[{{$index}}]' id=  name = 'images[x.team_img_url]' height="100" width="150"imageonload/> -->
+            </li>
+          </ul>
+        </div>
+        <div class = 'col responsive-sm'>
+          <ul class='list'>
+          <li class = 'item'>
+            <b>TeamName</b>  {{x.team_name}}
+          </li>
+
+        <li class = 'item'>
+            <b>TeamCaptain</b>  {{x.team_captain}}
+        </li>
+        <li class = 'item'>
+          <b>TeamCoach</b>  {{x.team_coach}}
+          </li>
+          <li class = 'item'>
+            <b>Home Venue</b>{{x.team_home_venue}}
+            </li>
+          <li class = 'item'>
+            <b>Team Owner</b>{{x.team_owner}}
+            </li>
+      <li class = 'item'>
+      </div>
+    </div>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
