@@ -1,7 +1,9 @@
 <ion-view view-title="TeamsInfo">
+  <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
+  </ion-nav-back-button>
   <ion-content>
     <ion-list>
-      <div ng-repeat = "x in data" ng-init = 'getImage(x.team_img_url)' class = 'row responsive-sm' class='card'>
+      <div ng-repeat = "x in data" class = 'row responsive-sm' class='card'>
         <!-- <div class = 'col'> -->
         <div class = 'row responsive-sm'>
           <div class='col responsive-sm'>
@@ -18,7 +20,6 @@
           <li class = 'item'>
             <b>TeamName</b>  {{x.team_name}}
           </li>
-
         <li class = 'item'>
             <b>TeamCaptain</b>  {{x.team_captain}}
         </li>

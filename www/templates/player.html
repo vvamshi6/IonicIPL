@@ -1,4 +1,9 @@
 <ion-view view-title= 'TeamPlayerInfo'>
+  <ion-nav-buttons side="left">
+   <button class="button button-clear" ng-click="myGoBack()" >
+   <i class="icon ion-ios-arrow-back"></i>
+   Back</button>
+   </ion-nav-buttons>
   <ion-content>
   <center>
       <div class = "row responsive-sm" ng-repeat="x in data">
@@ -12,15 +17,14 @@
         <div class = "col">
             <ion-list>
               <a href="{{x.player_cricinfo_url}}" target = '_blank'>
-                  <ion-item><b>Player Name</b> {{x.player_name}}</ion-item></a>
-                  <ion-item><b>Player Role</b> {{x.player_role}}</ion-item>
-                  <ion-item><b>Player Dob</b> {{x.player_dob}}</ion-item>
-                  <ion-item><b>Player Nationality</b> {{x.player_nationality}}</ion-item>
-                  <ion-item><b>Player Bat Style</b> {{x.player_batting_style}}</ion-item>
-                  <ion-item><b>Player Bow Style</b> {{x.player_bowling_style}}</ion-item>
+                  <ion-item text-wrap><b>Player Name</b> {{x.player_name}}</ion-item></a>
+                  <ion-item text-wrap><b>Player Role</b> {{x.player_role}}</ion-item>
+                  <ion-item text-wrap><b>Player Dob</b> {{x.player_dob}}</ion-item>
+                  <ion-item text-wrap><b>Player Nationality</b> {{x.player_nationality}}</ion-item>
+                  <ion-item text-wrap><b>Player Bat Style</b> {{x.player_batting_style}}</ion-item>
+                  <ion-item text-wrap><b>Player Bow Style</b> {{x.player_bowling_style}}</ion-item>
             </ion-list>
         </div>
-
       </div>
       <br>
     </tbody>

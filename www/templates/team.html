@@ -1,15 +1,21 @@
 <ion-view view-title="IPL">
   <ion-content class="padding">
-    <div ng-repeat = "x in data" ng-init = 'getImage(x.team_img_url)' class = 'col-md-3'>
-      <div >
+<div class = 'row responsive-sm'>
+    <div class = "col responsive-sm" ng-repeat = "x in data " ng-init = 'getImage(x.team_img_url)' >
+      <div class = "col responsive-sm">
     <!-- <center><img ng-src={{imageCache[$index]}} id= {{(x.team_img_url)}} name = 'getImage(x.team_img_url)' height="100" width="150"imageonload/></center> -->
     <!-- <img ng-src = '{{imageUrl}}'> -->
     <a ui-sref="teamplayer({teamname:x.team_name})">
     <!-- <center><img ng-src=x.team_img_url id= {{(x.team_img_url)}} name = 'getImage(x.team_img_url)' height="100" width="150"imageonload/></center> -->
-    <center><img ng-src=x.team_img_url id= {{(x.team_img_url)}} name = 'images[x.team_img_url]' height="100" width="150"imageonload/></center>
+    <img ng-src='' id= {{(x.team_img_url)}} name = 'images[x.team_img_url]' height="100" width="150">
+    <!-- <img class = 'thumbnail' src='{{images[x.team_img_url]}}' height="75" width="105"/> -->
+
+    <!-- <img ng-src='imageCache[x.team_img_url]' name = 'images[x.team_img_url]' height="100" width="150"> -->
     <!-- <img ng-src=x.team_img_url name = 'images[x.team_img_url]' height="100" width="150"imageonload/> -->
+    <div class = "col">{{x.team_name}}</div></a>
     </div>
-    <center>{{x.team_name}}</center>
+  </div>
+    <center>
     </a>
     </ion-content>
 </ion-view>

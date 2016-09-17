@@ -1,17 +1,17 @@
 angular.module('iplApp.controllers', [])
 .controller('teamCtrl', function($scope,$firebaseObject,$state,$rootScope,ImageService,$stateParams,$ImageCacheFactory) {
   // console.log('after click',$stateParams.teaminformation);
-  console.log('teamCtrl');
   $scope.teamname = $stateParams.teaminformation;
     /*passing the reference to firebase to get data*/
     var ref = firebase.database().ref('tean_info');
     var syncObject = $firebaseObject(ref);
     /*loading data as a promise*/
     syncObject.$loaded().then(function(data) {
+      alert('in sync Object function');
       /*Adding the data to the scope object*/
-        $scope.images = {};
         $scope.imageCache = [];
         // console.log(data);
+        $scope.images = [];
         angular.forEach(data,function(i){
           var storage = firebase.storage();
           var storageRef = firebase.storage().ref();
@@ -28,7 +28,6 @@ angular.module('iplApp.controllers', [])
         })
         console.log($scope.imageCache);
         		$ImageCacheFactory.Cache($scope.imageCache);
-        console.log($scope.images);
         $scope.data = data;
         $scope.teamdata = {};
         angular.forEach(data,function(i){
@@ -42,16 +41,15 @@ angular.module('iplApp.controllers', [])
         // $scope.url;
         // $scope.$apply($scope.getImage);
         // $scope.images = {};
+        // $scope.images = {};
+        console.log($scope.images);
         $scope.getImage = function(image) {
-           console.log(image);
+          //  console.log(image);
            var url = ImageService.getUrl(image).then(function(url) {
-              //  console.log($scope[image]);
-              //  $scope.images[image] = url;
-              //  console.log($scope.images);
-              //  console.log($scope.iurl);
                 // console.log(url);
                 // var tag = angular.element(document.getElementById(image));
                 // tag.src = url;
+                // $scope.images[image] = url;
                document.getElementById(image).src = url;
                // return url;
                // var myEl = angular.element( document.querySelector( '#image' ) );
@@ -63,8 +61,11 @@ angular.module('iplApp.controllers', [])
     });
 })
 
-.controller('playerCtrl', function($scope,  $firebaseObject, $rootScope,$stateParams,ImageService){
+.controller('playerCtrl', function($scope,  $firebaseObject, $rootScope,$stateParams,ImageService,$ionicHistory){
     console.log("playerCtrl");
+    $scope.myGoBack = function() {
+      $ionicHistory.goBack();
+    };
     $scope.teamname = $stateParams.teamname.replace(/\s/g, "");
     var ref = firebase.database().ref($scope.teamname);
     var syncObject = $firebaseObject(ref);
