@@ -6,11 +6,12 @@
    </ion-nav-buttons>
   <ion-content>
   <center>
+    <div>
       <div class = "row responsive-sm" ng-repeat="x in data">
         <div class = "col">
           <ion-list>
           <ion-item>
-            <img id = {{x.player_img_url}} src='{{x.player_img_url}}' alt="PlayerImage" height="120" width="140" name = {{getImage(x.player_img_url)}}></img>
+            <img id = {{x.player_img_url}} src='{{x.player_img_url}}' alt="PlayerImage" name = {{getImage(x.player_img_url)}}></img>
           </ion-item>
         </ion-list>
         </div>
@@ -26,6 +27,7 @@
             </ion-list>
         </div>
       </div>
+    </div>
       <br>
     </tbody>
 </table>

@@ -1,1 +1,7 @@
 /* Empty. Add your own CSS if you like */
+.img-responsive{
+background-image: url('../img/abc.png');
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+}
