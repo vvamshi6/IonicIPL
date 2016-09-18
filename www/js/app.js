@@ -1,36 +1,28 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
 angular.module('iplApp', ['ionic', 'iplApp.controllers', 'iplApp.services','firebase','ionic.ion.imageCacheFactory'])
 .run(function($ionicPlatform,$rootScope,$window) {
-  alert('1,angular module');
+  // alert('1,angular module');
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     // alert('Checking the ready function');
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      alert('cordova plugins');
+      // alert('cordova plugins');
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
     }
     if (window.cordova && window.cordova.logger) {
-      alert('3,Cordova if condition');
+      // alert('3,Cordova if condition');
            window.cordova.logger.__onDeviceReady();
        }
     if (window.StatusBar) {
-      alert('4,statusbar');
+      // alert('4,statusbar');
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
   });
 })
-
 .config(function($stateProvider, $urlRouterProvider) {
-    alert('config function');
+    // alert('config function');
     $stateProvider
   // setup an abstract state for the tabs directive
     .state('tab', {
@@ -43,7 +35,7 @@ angular.module('iplApp', ['ionic', 'iplApp.controllers', 'iplApp.services','fire
     url: '/home',
     views: {
       'tab-home': {
-        templateUrl: './templates/team.html',
+        templateUrl: './templates/teams.html',
         controller: 'teamCtrl'
       }
     }

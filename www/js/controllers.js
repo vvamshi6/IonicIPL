@@ -7,7 +7,7 @@ angular.module('iplApp.controllers', [])
     var syncObject = $firebaseObject(ref);
     /*loading data as a promise*/
     syncObject.$loaded().then(function(data) {
-      alert('in sync Object function');
+      // alert('in sync Object function');
       /*Adding the data to the scope object*/
         $scope.imageCache = [];
         // console.log(data);

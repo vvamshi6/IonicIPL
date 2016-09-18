@@ -1,21 +1,21 @@
 <ion-view view-title= 'TeamPlayerInfo'>
   <ion-nav-buttons side="left">
    <button class="button button-clear" ng-click="myGoBack()" >
-   <i class="icon ion-ios-arrow-back"></i>
-   Back</button>
+   <i class="icon ion-android-arrow-back"></i>
+   </button>
    </ion-nav-buttons>
   <ion-content>
   <center>
-    <div>
+        <div>
       <div class = "row responsive-sm" ng-repeat="x in data">
-        <div class = "col">
+        <div class = "col responsive-sm">
           <ion-list>
           <ion-item>
             <img id = {{x.player_img_url}} src='{{x.player_img_url}}' alt="PlayerImage" name = {{getImage(x.player_img_url)}}></img>
           </ion-item>
         </ion-list>
         </div>
-        <div class = "col">
+        <div class = "col responsive-sm">
             <ion-list>
               <a href="{{x.player_cricinfo_url}}" target = '_blank'>
                   <ion-item text-wrap><b>Player Name</b> {{x.player_name}}</ion-item></a>
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-      <br>
+        <br>
     </tbody>
 </table>
 </center>
