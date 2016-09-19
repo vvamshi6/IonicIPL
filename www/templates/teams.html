@@ -1,12 +1,18 @@
+<!--
+* FileName:player.html
+* CreatedBy: Vamsee
+* Date :12-08-2016
+* Purpose : Creating IPL app using ionic framework
+-->
 <ion-view view-title="IPL">
   <ion-content class="padding">
     <div class="row unlimited-items responsive-sm" >
       <div class="col" ng-repeat="x in data" ng-init = 'getImage(x.team_img_url)'>
         <a ui-sref="teamplayer({teamname:x.team_name})">
-<!-- <center><img ng-src=x.team_img_url id= {{(x.team_img_url)}} name = 'getImage(x.team_img_url)' height="100" width="150"imageonload/></center> -->
+      <!-- <center><img ng-src=x.team_img_url id= {{(x.team_img_url)}} name = 'getImage(x.team_img_url)' height="100" width="150"imageonload/></center> -->
           <img ng-src='' id= {{(x.team_img_url)}} name = 'images[x.team_img_url]'>
         <br>
-            <strong>{{x.team_name}}</strong></a>
+            <div><strong style="color:black,flex-wrap">{{x.team_name}}</strong></div></a>
           </div>
   </ion-content>
 </ion-view>

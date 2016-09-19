@@ -1,19 +1,30 @@
-/* Empty. Add your own CSS if you like */
+/*
+* FileName:tabs.html
+* CreatedBy: Vamsee
+* Date :12-08-2016
+* Purpose : Creating IPL app using ionic framework
+*/
+/*Responsive image*/
 .img-responsive{
-background-image: url('../img/abc.png');
--webkit-background-size: cover;
--moz-background-size: cover;
-background-size: cover;
+  background-image: url('../img/abc.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
 }
 .gallery {
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+/*Grid sytem for data*/
 .row.unlimited-items {
   flex-wrap: wrap;
 }
-
+/*Setting no of columns for each row*/
 .row.unlimited-items .col{
   flex: none;
   width: 25%;
+}
+/*Adding background colour to the app*/
+.background, .background .pane, .background .item, .background .item-complex .item-content {
+    background-color: lightblue;
 }

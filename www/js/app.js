@@ -1,31 +1,29 @@
+/*
+* FileName:app.js
+* CreatedBy: Vamsee
+* Date :12-08-2016
+* Purpose : Creating IPL app using ionic framework
+*/
+/*Creating module with Ionic platform*/
 angular.module('iplApp', ['ionic', 'iplApp.controllers', 'iplApp.services','firebase','ionic.ion.imageCacheFactory'])
 .run(function($ionicPlatform,$rootScope,$window) {
-  // alert('1,angular module');
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    // alert('Checking the ready function');
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      // alert('cordova plugins');
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
     }
     if (window.cordova && window.cordova.logger) {
-      // alert('3,Cordova if condition');
            window.cordova.logger.__onDeviceReady();
        }
     if (window.StatusBar) {
-      // alert('4,statusbar');
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+          StatusBar.styleDefault();
     }
   });
 })
+/*Routing and different states*/
 .config(function($stateProvider, $urlRouterProvider) {
-    // alert('config function');
-    $stateProvider
-  // setup an abstract state for the tabs directive
-    .state('tab', {
+        $stateProvider
+      .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: './templates/tabs.html'
@@ -71,7 +69,6 @@ angular.module('iplApp', ['ionic', 'iplApp.controllers', 'iplApp.services','fire
         restrict: 'A',
         link: function(scope, element, attrs) {
             element.bind('load', function() {
-                // console.log('image is loaded');
                 console.log('image directive');
             });
         }

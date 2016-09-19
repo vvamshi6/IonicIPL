@@ -1,3 +1,10 @@
+/*
+* FileName:tabs.html
+* CreatedBy: Vamsee
+* Date :12-08-2016
+* Purpose : Creating IPL app using ionic framework
+*/
+/*Injecting the controllers to the module*/
 angular.module('iplApp.controllers', [])
 .controller('teamCtrl', function($scope,$firebaseObject,$state,$rootScope,ImageService,$stateParams,$ImageCacheFactory) {
   // console.log('after click',$stateParams.teaminformation);
@@ -9,6 +16,7 @@ angular.module('iplApp.controllers', [])
     syncObject.$loaded().then(function(data) {
       // alert('in sync Object function');
       /*Adding the data to the scope object*/
+        $scope.data = data;
         $scope.imageCache = [];
         // console.log(data);
         $scope.images = [];
@@ -27,8 +35,7 @@ angular.module('iplApp.controllers', [])
           // $scope.images[i.team_img_url] = url;
         })
         console.log($scope.imageCache);
-        		$ImageCacheFactory.Cache($scope.imageCache);
-        $scope.data = data;
+        $ImageCacheFactory.Cache($scope.imageCache);
         $scope.teamdata = {};
         angular.forEach(data,function(i){
             if(i.team_name == $scope.teamname){
@@ -38,10 +45,6 @@ angular.module('iplApp.controllers', [])
           }
         })
         console.log($scope.teamdata);
-        // $scope.url;
-        // $scope.$apply($scope.getImage);
-        // $scope.images = {};
-        // $scope.images = {};
         console.log($scope.images);
         $scope.getImage = function(image) {
           //  console.log(image);
@@ -60,7 +63,7 @@ angular.module('iplApp.controllers', [])
        }
     });
 })
-
+/*Player Ctrl*/
 .controller('playerCtrl', function($scope,  $firebaseObject, $rootScope,$stateParams,ImageService,$ionicHistory){
     console.log("playerCtrl");
     $scope.myGoBack = function() {
@@ -78,24 +81,4 @@ angular.module('iplApp.controllers', [])
             document.getElementById(image).src = url;
         });
     }
-}
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-)
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  console.log("chatControl");
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  console.log("AccountControl");
-  $scope.settings = {
-    enableFriends: true
-  };
 });
